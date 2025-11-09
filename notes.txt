@@ -1,0 +1,296 @@
+--------------------part 1- -----------virtual machine-------------------
+hperviser is like help us run multiple os on s single machine like one is native hyperviser and one is like on the top of hyperviser you can understadn by watching a single machine 
+
+use command ipconfig to get get information about 
+
+i use vagrant clud to install various os or virtual machine according to our need and fix it 
+
+------------>learning linux ---------------
+
+linux principle every thing is file 
+
+debian based os and rpm based os 
+rpm based used on seervers and 
+debian based is more of using it in day to day life 
+
+go a virtual machine file and run this commmand to run the virtual machine 
+{vagrant up
+vagrant ssh    /// to get into shell '
+
+whoami
+cat /etc/os-release
+
+cd /   -for root in vagrant os
+
+
+sudo -i to get into root  shell 
+
+touch x.txt  to start file
+
+exit   > to move otuside root
+
+thse command mostly we use to handle file in linux 
+ 77  pwd
+   78  touch testfile1.txt
+  125  history
+  127  whoami
+  128  pwd
+  129  cd /
+  130  pwd
+  131  ls
+  132  cat /etc/os-release
+
+   sudo yum install vim -y
+
+vagrant global-status
+to check which desktop is running on our sysytem
+
+vim firstfile.txt  
+ }
+
+ types of files in linux 
+🗒️ Notes on:
+drwxr-xr-x. 2 vagrant vagrant 6 Nov  1 09:05 backupdir
+
+
+d → This is a directory.
+
+rwxr-xr-x → Permissions:
+
+Owner: rwx → read, write, execute (full access)
+
+Group: r-x → read, execute only
+
+Others: r-x → read, execute only
+
+. → SELinux security context is active.
+
+2 → Number of links (for directories, usually 2 = . and ..).
+
+vagrant (user) → Owner of the directory.
+
+vagrant (group) → Group that owns it.
+
+6 → Size of the directory in bytes.
+
+Nov 1 09:05 → Last modification date and time.
+
+backupdir → Directory name.
+
+-----------------------------------------------------------------
+nano x.txt is default text edior in linux based os but 
+vim is new one 
+
+
+filters in linux
+🧩 What is a filter in Linux?
+
+In Linux (including CentOS), a filter is simply a command-line program that takes input, processes it, and produces output.
+Filters are often used in pipelines (connected by the | operator), where the output of one command becomes the input of another.
+
+cat file.txt
+head -n 5 file.txt
+-------------------------redirectin-----
+🧭 What is Redirection?
+
+Redirection in Linux means changing where input and output go.
+
+Normally:
+
+Input comes from your keyboard.
+
+Output goes to your screen (terminal).
+
+With redirection, you can:
+
+Send output to a file instead of the screen.
+
+Take input from a file instead of the keyboard.
+
+Combine or separate standard output and error output.
+| Symbol | Meaning                 | Example                   | Description          |              |                             |
+| ------ | ----------------------- | ------------------------- | -------------------- | ------------ | --------------------------- |
+| `>`    | Output (overwrite)      | `echo hi > file.txt`      | Write output to file |              |                             |
+| `>>`   | Output (append)         | `echo hi >> file.txt`     | Add output to file   |              |                             |
+| `<`    | Input                   | `sort < file.txt`         | Take input from file |              |                             |
+| `2>`   | Error output            | `ls /bad/path 2> err.txt` | Write errors to file |              |                             |
+| `2>&1` | Combine output + errors | `cmd > out.txt 2>&1`      | Put both in one file |              |                             |
+| `      | `                       | Pipe                      | `cat file            | grep "name"` | Send output to next command |
+
+------------------user and groups -------------
+| Task               | Command                       | Description                 |
+| ------------------ | ----------------------------- | --------------------------- |
+| List all users     | `cat /etc/passwd`             | Show all user accounts      |
+| Add user           | `sudo useradd -m user1`       | Create new user             |
+| Set password       | `sudo passwd user1`           | Assign password             |
+| Delete user        | `sudo userdel -r user1`       | Remove user & home dir      |
+| List all groups    | `cat /etc/group`              | Show all groups             |
+| Create group       | `sudo groupadd devs`          | Make a new group            |
+| Add user to group  | `sudo usermod -aG devs user1` | Add user to secondary group |
+| Show user’s groups | `id user1`                    | View group memberships      |
+| Change ownership   | `sudo chown user1 file`       | Change file owner           |
+| Change group       | `sudo chgrp devs file`        | Change file’s group         |
+
+-----------file eprmissions ---------------
+| Part         | Meaning                                 |
+| ------------ | --------------------------------------- |
+| `-`          | File type (`-` = file, `d` = directory) |
+| `rw-`        | **Owner** permissions → read + write    |
+| `r--`        | **Group** permissions → read only       |
+| `r--`        | **Others** permissions → read only      |
+| `john`       | File owner                              |
+| `developers` | File group                              |
+| `notes.txt`  | File name                               |
+
+-----------------sudo--------------------
+🔐 What is sudo in Linux?
+
+sudo means “superuser do”.
+It allows a regular (non-root) user to run commands with root (administrator) privileges.
+
+You use sudo when you need to:
+
+install software
+
+modify system files
+
+add/remove users
+
+start/stop system services
+
+change system configuration
+
+access protected directories
+
+Without sudo → "Permission denied"
+With sudo → Command runs as root
+
+----------package management -----------------
+yum and dnf based is used to manage package in fedora baased linux os and apt is used for ubunutu bassed linux os 
+
+to get package 
+wget https://rpmfind.net/linux/centos-stream/9-stream/AppStream/x86_64/os/Packages/httpd-2.4.62-7.el9.x86_64.rpm
+
+modern way to install  package softwaare is 
+yum search packagex
+yum install pacakge x 
+after we hit this commmand packaage and its dependenicies is installed accordingly 
+
+dnf install httpd -y
+
+installing jenkins 
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+# Add required dependencies for the jenkins package
+sudo yum install fontconfig java-21-openjdk
+sudo yum install jenkins
+sudo systemctl daemon-reload
+
+-------------handling services in linux os -------------
+to start a service lets say httpd we need to start service using 
+systemctl status httpd
+systemctl start httpd
+systemctl stop httpd
+systemctl enable httpd
+
+
+--------------handling process in linux os---------------
+
+controling processs in linux base d os 
+
+| Task               | Command          |
+| ------------------ | ---------------- |
+| List all processes | `ps aux`         |
+| Search by name     | `pgrep name`     |
+| Real-time monitor  | `top` / `htop`   |
+| Background job     | `command &`      |
+| Stop (pause)       | `Ctrl + Z`       |
+| Resume             | `bg %1`          |
+| Bring foreground   | `fg %1`          |
+| Kill by PID        | `kill <pid>`     |
+| Kill by name       | `pkill <name>`   |
+| View tree          | `pstree`         |
+| Change priority    | `nice`, `renice` |
+
+ps -ef
+
+q to quit
+
+piping in linux measn deleting filw without storing ijnn temeperory files
+
+ps aux | grep firefox
+
+| Command | Description              | Example         |
+| ------- | ------------------------ | --------------- |
+| `ps`    | Show active processes    | `ps aux`        |
+| `kill`  | Stop a process           | `kill 1234`     |
+| `pkill` | Stop by name             | `pkill firefox` |
+| `jobs`  | Show background tasks    | `jobs`          |
+| `fg`    | Bring task to foreground | `fg %1`         |
+| `bg`    | Run task in background   | `bg %1`         |
+
+
+-------------
+archiving 
+| Command           | Description          | Example                                |
+| ----------------- | -------------------- | -------------------------------------- |
+| `tar`             | Archive files        | `tar -czvf backup.tar.gz folder/`      |
+| `unzip`           | Extract `.zip` files | `unzip archive.zip`                    |
+| `gzip` / `gunzip` | Compress/decompress  | `gzip file.txt` / `gunzip file.txt.gz` |
+
+---------sytem maintance--------------
+
+| Command    | Description          | Example             |
+| ---------- | -------------------- | ------------------- |
+| `history`  | Show command history | `history`           |
+| `clear`    | Clear terminal       | `clear`             |
+| `shutdown` | Power off system     | `sudo shutdown now` |
+| `reboot`   | Restart system       | `sudo reboot`       |
+| `df -h`    | Check disk space     | `df -h`         
+
+------------networking commands --------------------
+| Command             | Description               | Example                             |
+| ------------------- | ------------------------- | ----------------------------------- |
+| `ping`              | Check connection          | `ping google.com`                   |
+| `ifconfig` / `ip a` | Show network interfaces   | `ip a`                              |
+| `curl`              | Download or test URLs     | `curl https://example.com`          |
+| `wget`              | Download files            | `wget https://example.com/file.zip` |
+| `netstat -tulnp`    | Show open ports           | `sudo netstat -tulnp`               |
+| `ss -tuln`          | Modern version of netstat | `ss -tuln`                          |
+    |
+-----------git----------------------
+
+git distributed vcs
+we download locally then pull push 
+
+| Action          | Command                       |
+| --------------- | ----------------------------- |
+| View branches   | `git branch`                  |
+| Create branch   | `git branch branch-name`      |
+| Switch branch   | `git checkout branch-name`    |
+| Create + switch | `git checkout -b branch-name` |
+| Merge branch    | `git merge branch-name`       |
+| Delete branch   | `git branch -d branch-name`   |
+| Push branch     | `git push origin branch-name` |
+
+rollback in git and github
+git diff
+
+
+---😎😎😎😎😎😎----chapter 3--------------------vagrant and linux server---------------------------------------------------------------------------------------------------
+vagrant global-status
+vagrant destroy 1234948c
+
+ctrl +shift +p for selecing window terminal or git bash terminal according to convinence 
+
+-----------------------------------------  >
+  267  cd  /c/Users/HP/Desktop/
+  268  ls
+  273  mkdir finance
+  275  cd finance
+  280  vagrant box list
+  283  vagrant init eurolinux-vagrant/centos-stream-9
+
