@@ -172,7 +172,7 @@ to get package
 wget https://rpmfind.net/linux/centos-stream/9-stream/AppStream/x86_64/os/Packages/httpd-2.4.62-7.el9.x86_64.rpm
 
 modern way to install  package softwaare is 
-yum search packagex
+yum search package x
 yum install pacakge x 
 after we hit this commmand packaage and its dependenicies is installed accordingly 
 
@@ -286,7 +286,7 @@ vagrant destroy 1234948c
 
 ctrl +shift +p for selecing window terminal or git bash terminal according to convinence 
 
------------------------------------------  >
+-----------hosting a website simple html on linux server using various services like httpd and all ------------------------------  >
   267  cd  /c/Users/HP/Desktop/
   268  ls
   273  mkdir finance
@@ -294,3 +294,32 @@ ctrl +shift +p for selecing window terminal or git bash terminal according to co
   280  vagrant box list
   283  vagrant init eurolinux-vagrant/centos-stream-9
 
+ip addr show 
+
+runnign and hosting a zip template web service on centos   
+# Step 1: Go to /tmp directory
+cd /tmp
+
+# Step 2: Download HTML template
+wget https://www.tooplate.com/zip-templates/2135_mini_finance.zip
+
+# Step 3: Verify download
+ls
+
+# Step 4: Extract the downloaded zip file
+unzip 2135_mini_finance.zip
+
+# Step 5: Enter the extracted folder
+cd 2135_mini_finance
+
+# Step 6: Confirm current location
+pwd
+
+# Step 7: Copy website files to web root
+sudo cp -rf * /var/www/html/
+
+# Step 8: Restart web server (if Apache)
+sudo systemctl restart httpd
+
+# Step 9: Clear terminal screen
+clear
