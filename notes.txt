@@ -323,3 +323,24 @@ sudo systemctl restart httpd
 
 # Step 9: Clear terminal screen
 clear
+
+nano commands   
+-------------------==================================
+| Goal                                   | Keys                                            |
+| -------------------------------------- | ----------------------------------------------- |
+| Cancel the “File Name to Write” screen | **Ctrl + C**                                    |
+| Paste text                             | **Ctrl + Shift + V** or **Right-click → Paste** |
+| Save file                              | **Ctrl + O**, then **Enter**                    |
+| Exit nano                              | **Ctrl + X**                                    |
+
+
+===================================================
+apache tomcat service 
+i want to know some answer 
+
+tomcat is java based http server  
+
+if sytem ctl service is not working what we can do is we can get it throggh wget or other serives after getting we can do is 
+we need to other way to start this services and stop this serivces if possible 
+>
+
