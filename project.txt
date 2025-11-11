@@ -191,3 +191,5 @@ Learn containers	Docker + Kubernetes
 Learn monitoring	Prometheus + Grafana stack
 
 Would you like me to pick one project (for example, a full CI/CD pipeline on AWS) and give you a step-by-step guide to build it from scratch?
+
+

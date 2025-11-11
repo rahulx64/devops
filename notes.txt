@@ -334,7 +334,7 @@ nano commands
 | Exit nano                              | **Ctrl + X**                                    |
 
 
-===================================================
+=============================================================================
 apache tomcat service 
 i want to know some answer 
 
@@ -343,4 +343,33 @@ tomcat is java based http server
 if sytem ctl service is not working what we can do is we can get it throggh wget or other serives after getting we can do is 
 we need to other way to start this services and stop this serivces if possible 
 >
+---=========================================================----->
+in terminal we can store value in shell in this way 
+x=12
+to get value 
+echo $X
 
+can do basic handling like for loop ifelse variable store and more
+
+so the project i am working i would like to say is i am uusing 
+nginx --->apache tomcat-->rabbitMQ -->memecache-->mysql
+
+
+network file system  (multiple server can read and access simple file system )
+
+app01
+
+192.168.56.15   db01
+
+192.168.56.14   mc01
+
+192.168.56.13   rmq01
+
+192.168.56.11   web01
+
+## vagrant-hostmanager-end
+lets say if your all your vm is runnign and working propelry you need to do is  yoou need to check wherather 
+you can transfer data from 
+current login vm to vmx
+here is the command 
+ping app01 -c 4 ******
