@@ -373,3 +373,29 @@ you can transfer data from
 current login vm to vmx
 here is the command 
 ping app01 -c 4 ******
+
+--------------------nentwrking in devops how we handle it manually -------------------------
+
+after sudo -i
+
+ip addr show
+ping  ipaddreess command to help us chk wheather datat is sending to the given location  
+ping google.com
+ping -c 4 8.8.8.8    #= send 4 ICMP echo requests
+tracert google.com   #= to trace path
+curl https://google.com   ==help us download 
+wget https://example.com/file.tar.gz
+again to download 
+netstat -antp
+nmap  localhost 
+dig www.google.com  to chek ip address of host 
+route -n 
+arp  
+mtr   is just like trace route with more information 
+telnet  ip
+
+----------------------container------------------------
+
+rather than in a virtual machine where each vm linux host a service and each service has its own kernel but in the the case of in docker each serivce has same kernel but different file structure realted to a particluar service okay now you might get it 
+
+cp x y 
