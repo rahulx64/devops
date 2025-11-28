@@ -399,3 +399,21 @@ telnet  ip
 rather than in a virtual machine where each vm linux host a service and each service has its own kernel but in the the case of in docker each serivce has same kernel but different file structure realted to a particluar service okay now you might get it 
 
 cp x y 
+
+
+--------------------aws-------------
+there are 172 seriveces in aws but 
+
+#1 ec2 service  elastic compute cloud 
+it contain ami,instance type ,amazon elastic block store(ebs)
+it contan ami amazon virtual image it is jsut like vagrant iage for lightweight hosting of ervice 
+
+
+aws ~/.aws/  it give information about hidden files and tilda means home directory 
+
+aws ec2 describe-instances
+ some cls command
+ i have complented ec2 serivce
+
+ and iam serivice 
+ 
